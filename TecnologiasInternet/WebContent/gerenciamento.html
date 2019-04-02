@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="estilo.css">
+<title>MercaFacil</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="home.html">MercaFacil</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="gerenciamento.html">Gerenciamento</a></li>
+				<li class="nav-item"><a class="nav-link" href="vendas.html">Vendas</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container espaco"></div>
+	<div class="container-fluid">
+
+		<h2>Produtos</h2>
+
+		<table id="tabelaProdutos" class="table">
+			<thead>
+				<tr>
+					<th>Descrição</th>
+					<th>Codigo</th>
+					<th>Valor</th>
+					<th>Quantidade</th>
+					<th>Data de Fabricação</th>
+					<th>Data de Vencimento</th>
+					<th>Editar</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>Arroz</td>
+				<td>1000</td>
+				<td>R$ 4,00</td>
+				<td>10</td>
+				<td>22 / 12 / 1913</td>
+				<td>12 / 07 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1001</td>
+				<td>R$ 4,00</td>
+				<td>12</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1002</td>
+				<td>R$ 4,00</td>
+				<td>14</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1003</td>
+				<td>R$ 4,00</td>
+				<td>16</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1004</td>
+				<td>R$ 4,00</td>
+				<td>2</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1005</td>
+				<td>R$ 4,00</td>
+				<td>3</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1006</td>
+				<td>R$ 4,00</td>
+				<td>10</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1007</td>
+				<td>R$ 4,00</td>
+				<td>6</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1008</td>
+				<td>R$ 4,00</td>
+				<td>8</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1009</td>
+				<td>R$ 4,00</td>
+				<td>9</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1010</td>
+				<td>R$ 4,00</td>
+				<td>10</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1011</td>
+				<td>R$ 4,00</td>
+				<td>1</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1012</td>
+				<td>R$ 4,00</td>
+				<td>22</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Arroz</td>
+				<td>1013</td>
+				<td>R$ 4,00</td>
+				<td>7</td>
+				<td>12 / 12 / 1913</td>
+				<td>12 / 12 / 1914</td>
+				<td>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target="#modalEditar" onclick="editarLinha(this)">
+						<img src="edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" onclick="deletarLinha(this)">
+						<img src="delete.png" />
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="container espaco"></div>
+	<div class="container row float-right">
+			<div class="col-10"></div>
+			<div class="col-2">
+				<a class="btn btn-lg btn-secondary" href="home.html">Voltar</a>
+			</div>
+	</div>
+
+	<!-- ########################### MODAL EDITAR ########################### -->
+
+	<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog"
+		aria-labelledby="labelModalEditar" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="labelModalEditar">Editar Registro</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close" onclick="limparCamposModal()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-row">
+						<div class="col-12">
+							<label for="m_descricao">Descrição:</label> <input
+								id="m_descricao" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-4">
+							<label for="m_codigo">Código:</label> <input id="m_codigo"
+								type="text" class="form-control" readonly>
+						</div>
+						<div class="col-4">
+							<label for="m_valor">Valor:</label> <input id="m_valor"
+								type="text" class="form-control">
+						</div>
+						<div class="col-4">
+							<label for="m_atd">Quantidade:</label> <input id="m_qtd"
+								type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="container espaco"></div>
+						<div class="col-6">
+							<label for="fabricacao">Data de Fabricação</label> <input
+								id="m_fabricacao" type="date" class="form-control">
+						</div>
+						<div class="col-6">
+							<label for="vencimento">Data de Vencimento</label> <input
+								id="m_vencimento" type="date" class="form-control"
+								placeholder="data">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal" onclick="limparCamposModal()">Cancelar</button>
+					<button type="button" class="btn btn-primary">Salvar
+						Alterações</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Optional JavaScript -->
+	<script type="text/javascript" src="script.js"></script>
+	<script>
+	</script>
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

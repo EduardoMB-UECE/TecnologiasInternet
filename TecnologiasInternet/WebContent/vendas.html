@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="estilo.css">
+<title>MercaFacil</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="home.html">MercaFacil</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="gerenciamento.html">Gerenciamento</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="vendas.html">Vendas</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container espaco"></div>
+	<div class="container">
+		<form class="form-inline float-right">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" placeholder="Descrição"
+					aria-label="Descrição" aria-describedby="botaoBuscaDescricao">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button"
+						id="botaoBuscaDescricao">Procurar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="container-fluid">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Descrição</th>
+					<th>Codigo</th>
+					<th>Valor</th>
+					<th>Quantidade</th>
+					<th>Data de Fabricação</th>
+					<th>Data de Vencimento</th>
+					<th>Adicionar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Feijao</td>
+					<td>1004</td>
+					<td>R$ 12,00</td>
+					<td>12</td>
+					<td>12 / 12 / 1913</td>
+					<td>12 / 12 / 1914</td>
+					<td><button type="button" class="btn btn-sm"
+							data-toggle="modal" data-target="#modalEditar"
+							onclick="adicionarCarrinho(this)">
+							<img src="plus.png" />
+						</button></td>
+				</tr>
+				<tr>
+					<td>Açucar</td>
+					<td>1005</td>
+					<td>R$ 2,00</td>
+					<td>17</td>
+					<td>12 / 12 / 1913</td>
+					<td>12 / 12 / 1914</td>
+					<td><button type="button" class="btn btn-sm"
+							data-toggle="modal" data-target="#modalEditar"
+							onclick="adicionarCarrinho(this)">
+							<img src="plus.png" />
+						</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="container espaco"></div>
+	<h2>Carrinho</h2>
+	<div class="container-fluid">
+		<table id="tabelaCarrinho" class="table">
+			<thead>
+				<tr>
+					<th>Descrição</th>
+					<th>Codigo</th>
+					<th>Valor</th>
+					<th>Quantidade</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Arroz</td>
+					<td>1001</td>
+					<td>R$ 4,00</td>
+					<td><span id="qtd">1</span>
+						<button type="button" class="btn btn-sm" data-toggle="modal"
+							data-target="#modalEditar" onclick="incrementarQtd(this)">
+							<img src="arrow-up.png" />
+						</button>
+						<button type="button" class="btn btn-sm" data-toggle="modal"
+							data-target="#modalEditar" onclick="decrementarQtd(this)">
+							<img src="arrow-down.png" />
+						</button></td>
+					<td>
+						<button type="button" class="btn btn-sm" data-toggle="modal"
+							data-target="#modalEditar" onclick="deletarLinha(this)">
+							<img src="delete.png" />
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>Macarrão</td>
+					<td>1002</td>
+					<td>R$ 4,00</td>
+					<td><span id="qtd">1</span>
+						<button type="button" class="btn btn-sm" data-toggle="modal"
+							data-target="#modalEditar" onclick="incrementarQtd(this)">
+							<img src="arrow-up.png" />
+						</button>
+						<button type="button" class="btn btn-sm" data-toggle="modal"
+							data-target="#modalEditar" onclick="decrementarQtd(this)">
+							<img src="arrow-down.png" />
+						</button></td>
+					<td>
+						<button type="button" class="btn btn-sm" data-toggle="modal"
+							data-target="#modalEditar" onclick="deletarLinha(this)">
+							<img src="delete.png" />
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="container espaco"></div>
+	<div class="container row float-right">
+			<div class="col-8"></div>
+			<div class="col-2">
+				<button class="btn btn-lg btn-primary">Confirmar</button>
+			</div>
+			<div class="col-2">
+				<a class="btn btn-lg btn-secondary" href="home.html">Voltar</a>
+			</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
